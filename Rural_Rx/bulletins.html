@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Medical Bulletin</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* Global styles */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        color: #333;
+        margin: 0;
+      }
+
+      a {
+        color: #337ab7;
+        text-decoration: none;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* Header styles */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 10px 20px;
+        height: 100px;
+      }
+
+      header h1 {
+        font-size: 28px;
+        margin: 0;
+      }
+
+      nav {
+        display: flex;
+      }
+
+      nav a {
+        margin-left: 20px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        margin-bottom: 0;
+      }
+
+      /* Main styles */
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .card {
+        width: 32%;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        overflow: hidden;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 20px;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .card-content h2 {
+        font-size: 24px;
+        margin: 0;
+        text-align: center;
+      }
+
+      .card-content p {
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: justify;
+        overflow: hidden;
+      }
+
+      .card-content a {
+        align-self: flex-end;
+      }
+
+      /* Sidebar styles */
+      .sidebar {
+        width: 30%;
+        margin-left: 20px;
+      }
+
+      .sidebar h2 {
+        font-size: 24px;
+        margin-top: 0;
+      }
+
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .sidebar li {
+        margin-bottom: 10px;
+      }
+
+      .sidebar a {
+        font-size: 16px;
+      }
+
+      /* Footer styles */
+      footer {
+        background-color: #fff;
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 20px;
+      }
+
+      /* Media queries */
+      @media screen and (max-width: 1024px) {
+        main {
+          flex-direction: column;
+        }
+
+        .card {
+          width: 100%;
+        }
+
+        .sidebar {
+          width: 100%;
+          margin: 20px 0;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        header {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        nav {
+          margin-top: 10px;
+        }
+
+        .sidebar {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Medical Bulletin</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Articles</a></li>
+          <li><a href="bulletins.html">Bulletins</a></li>
+          <li><a href="#">General Suggestions</a></li>
+          <li><a href="#">Indian Nuska</a></li>
+          <li><a href="index1.html">Profile</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="medical-articles">
+        <h2>Medical Articles</h2>
+        <article>
+          <h3>9 Tips for Better Sleep</h3>
+          <p>
+            Are you having trouble sleeping at night? Here are 9 tips that can
+            help improve your sleep:
+          </p>
+          <ul>
+            <li>Avoid caffeine and nicotine before bed</li>
+            <li>Create a relaxing bedtime routine</li>
+            <li>Make sure your bedroom is comfortable and dark</li>
+            <li>Exercise regularly and also meditate for an hour</li>
+            <li>Avoid large meals and drinks before bedtime</li>
+            <li>Don't take naps during the day</li>
+            <li>Limit screen time before bed</li>
+            <li>Try relaxation techniques, such as meditation or yoga</li>
+            <li>
+              Consult with your doctor if you continue to have trouble sleeping
+            </li>
+          </ul>
+        </article>
+        <article>
+          <h3>The Ayurvedic Approach to Health</h3>
+          <p>
+            Ayurveda is a traditional system of medicine that has been practiced
+            in India for thousands of years. It emphasizes the use of natural
+            remedies, such as herbs and spices, to promote health and prevent
+            disease.
+          </p>
+          <p>
+            According to Ayurveda, there are three doshas or energies that
+            govern the body: Vata, Pitta, and Kapha. Each person has a unique
+            combination of these doshas, and maintaining a balance between them
+            is key to good health.
+          </p>
+          <p>
+            Some common Ayurvedic remedies include turmeric for inflammation,
+            ginger for digestion, and ashwagandha for stress relief.
+          </p>
+        </article>
+        <article>
+          <h3>The Benefits of Yoga</h3>
+          <p>
+            Yoga is a physical, mental, and spiritual practice that originated
+            in India. It has been shown to have many health benefits, including
+            reducing stress, improving flexibility and balance, and lowering
+            blood pressure and cholesterol levels.
+          </p>
+          <p>
+            There are many different styles of yoga, from gentle Hatha yoga to
+            more intense Vinyasa yoga. Practicing yoga regularly can help you
+            feel more relaxed and energized.
+          </p>
+        </article>
+        <article>
+          <h3>How to Recognize Signs of Depression</h3>
+          <p>
+            Depression is a common mental health disorder that can affect people
+            of all ages. Here are some signs and symptoms to look out for:
+          </p>
+          <ul>
+            <li>Feeling sad, empty, or hopeless</li>
+            <li>Loss of interest in activities you used to enjoy</li>
+            <li>Changes in appetite and weight</li>
+            <li>Difficulty sleeping or sleeping too much</li>
+            <li>Feeling tired and lacking energy</li>
+            <li>Feeling guilty, worthless, or helpless</li>
+            <li>Difficulty concentrating or making decisions</li>
+            <li>Recurrent thoughts of death or suicide</li>
+          </ul>
+        </article>
+      </section>
+
+      <section>
+        <h2>Medical Bulletins</h2>
+        <h2>Bulletins</h2>
+        <article>
+          <h3>COVID-19 Update</h3>
+          <p>
+            India has been hit hard by the COVID-19 pandemic, with over 30
+            million cases and over 400,000 deaths as of July 2021. The Indian
+            government has implemented strict lockdowns and vaccine campaigns to
+            try to control the spread of the virus.
+          </p>
+          <p>
+            If you are in India, it is important to follow local guidelines and
+            restrictions to protect yourself and others from COVID-19.
+          </p>
+        </article>
+        <article>
+          <h3>Monsoon Season Precautions</h3>
+          <p>
+            The monsoon season in India can bring heavy rains, flooding, and
+            waterborne diseases. To stay safe during the monsoon season, it is
+            important to take precautions such as:
+          </p>
+          <ul>
+            <li>Avoiding walking through floodwaters</li>
+            <li>Boiling or treating drinking water</li>
+            <li>
+              Using mosquito nets or repellents to prevent mosquito-borne
+              illnesses
+            </li>
+            <li>Keeping food covered to prevent contamination</li>
+          </ul>
+        </article>
+
+        <ul>
+          <li><a href="#">Bulletin 1</a></li>
+          <li><a href="#">Bulletin 2</a></li>
+          <li><a href="#">Bulletin 3</a></li>
+        </ul>
+      </section>
+
+      <section class="general-suggestions">
+        <h2>General Suggestions</h2>
+        <p>
+          Here are some general suggestions that can help improve your overall
+          health:
+        </p>
+        <ul>
+          <li>Eat a healthy and balanced diet</li>
+          <li>Exercise regularly</li>
+          <li>Get enough sleep</li>
+          <li>Avoid smoking and limit alcohol consumption</li>
+          <li>Manage stress through relaxation techniques or therapy</li>
+          <li>
+            Stay up-to-date with recommended health screenings and check-ups
+          </li>
+          <li>
+            Stay connected with loved ones and engage in social activities
+          </li>
+          <li>Take care of your mental health by seeking help if needed</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Indian Nuska</h2>
+        <h2>Home-made Indian Nuske</h2>
+        <article>
+          <h3>Turmeric Milk</h3>
+          <p>
+            Turmeric milk is a popular home remedy in India that has many health
+            benefits. Here's how to make it:
+          </p>
+          <ol>
+            <li>Heat 1 cup of milk in a pan.</li>
+            <li>Add 1/4 teaspoon of turmeric powder and stir well.</li>
+            <li>Add a pinch of black pepper and stir again.</li>
+            <li>Sweeten with honey or sugar, if desired.</li>
+            <li>Drink warm before bed for a restful sleep.</li>
+          </ol>
+        </article>
+        <p>Here are some home-made Indian remedies for common ailments:</p>
+        <ul>
+          <li>
+            <strong>Cold and cough:</strong> Drink warm water with honey and
+            ginger.
+          </li>
+          <li>
+            <strong>Headache:</strong> Apply a paste of sandalwood powder and
+            water on your forehead.
+          </li>
+          <li><strong>Sore throat:</strong> Gargle with warm salt water.</li>
+          <li><strong>Stomach ache:</strong> Drink mint tea.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 RuralRx. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

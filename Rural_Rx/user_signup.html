@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RuralRx | Sign Up</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        background-color: #f1f1f1;
+      }
+
+      a {
+        text-decoration: none;
+        color: #0066cc;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      header {
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav img {
+        height: 50px;
+      }
+
+      main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      .signup {
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+        /*  margin-bottom: 1rem; */
+        color: #444;
+      }
+
+      form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        font-size: 1rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="date"],
+      input[type="tel"],
+      textarea {
+        font-size: 1rem;
+        padding: 0.5rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        outline: none;
+        transition: all 0.3s ease-in-out;
+      }
+
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      input[type="password"]:focus,
+      input[type="date"]:focus,
+      input[type="tel"]:focus,
+      textarea:focus {
+        border: 1px solid #0066cc;
+      }
+
+      select {
+        font-size: 1rem;
+        padding: 0.5rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        outline: none;
+        transition: all 0.3s ease-in-out;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'><path d='M2.5 7l7.5 10 7.5-10z'/></svg>")
+          no-repeat;
+        background-position: right 0.5rem center;
+        background-size: 0.5rem 0.5rem;
+      }
+
+      select:focus {
+        border: 1px solid #0066cc;
+      }
+
+      button[type="submit"] {
+        background-color: #0077cc;
+        border: none;
+        border-radius: 5px;
+        color: #ffffff;
+        cursor: pointer;
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px 20px;
+        margin-top: 20px;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #005fa3;
+      }
+
+      p {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      /* Media queries */
+      @media only screen and (max-width: 768px) {
+        header {
+          padding: 10px;
+        }
+
+        nav img {
+          height: 30px;
+        }
+
+        main {
+          padding: 10px;
+        }
+
+        .signup {
+          padding: 20px;
+        }
+
+        .signup h2 {
+          font-size: 20px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+          font-size: 14px;
+          padding: 8px;
+        }
+
+        button[type="submit"] {
+          font-size: 14px;
+          padding: 8px 16px;
+        }
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha3/0.6.0/sha3.min.js"></script>
+    <script defer>
+      function hashPassword() {
+        var passwordInput = document.getElementById("password");
+        var password = passwordInput.value;
+        var hashedPassword = sha3_256(password);
+        passwordInput.value = hashedPassword;
+
+        var confirmPasswordInput = document.getElementById("confirm_password");
+        var confirmPassword = confirmPasswordInput.value;
+        var hashedConfirmPassword = sha3_256(confirmPassword);
+        confirmPasswordInput.value = hashedConfirmPassword;
+      }
+      function navigate() {
+        var choice = document.getElementById("choice").value;
+        if (choice === "admin") {
+            window.location.href = "admin_signup.html";
+        }
+    }
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html"><img src="logo.png" alt="RuralRx logo" /></a>
+      </nav>
+    </header>
+    <main>
+      <section class="signup">
+        <div style="display: flex; gap: 6rem; align-items: center">
+          <h2>Create your account</h2>
+          <select name="choice" id="choice" style="width: 5rem" onchange="navigate()">
+            <option value="user" selected>User</option>
+            <option value="admin">Admin</option>
+        </select>
+        </div>
+        <form action="/index1.html">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <div class="form-group">
+            <label for="confirm_password">Confirm Password:</label>
+            <input
+              type="password"
+              id="confirm_password"
+              name="confirm_password"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required />
+          </div>
+          <div class="form-group">
+            <label for="blood-group">Blood Group</label>
+            <select
+              class="form-control"
+              name="blood-group"
+              id="blood-group"
+              required
+            >
+              <option value="">--Select your blood group--</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+              <option value="">Select</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="index.html">Login here</a></p>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 RuralRx. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

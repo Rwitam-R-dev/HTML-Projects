@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login - RuralRx</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0 !important;
+        background-color: #f7f7f7;
+        background-position: center;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .container {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+        margin: 50px auto;
+        max-width: 400px;
+        padding: 40px;
+        text-align: center;
+        position: relative;
+      }
+
+      .container:before {
+        background-image: url("login.jpg");
+        background-position: center;
+        background-size: cover;
+        content: "";
+        display: block;
+        filter: blur(5px);
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+      }
+
+      h1 {
+        color: #333;
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin: 0;
+        text-transform: uppercase;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        background-color: #f7f7f7;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+        font-size: 1rem;
+        margin-bottom: 20px;
+        padding: 16px;
+        width: 100%;
+      }
+
+      button {
+        background-color: #00aaff;
+        border: none;
+        border-radius: 10px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1.2rem;
+        font-weight: 700;
+        padding: 16px;
+        text-transform: uppercase;
+        transition: background-color 0.3s ease;
+        width: 100%;
+      }
+
+      button:hover {
+        background-color: #0096cc;
+      }
+
+      .error {
+        color: #f00;
+        font-size: 0.8rem;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="login.jpg"
+      alt=""
+      style="position: absolute; width: 100vw; height: 100vh"
+    />
+    <div class="container">
+      <h1>RuralRx</h1>
+      <form id="login-form" action="/index1.html">
+        <input type="text" id="username" placeholder="Username" required />
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+          required
+        />
+        <button type="submit">Log in</button>
+        <p id="error-message" class="error"></p>
+      </form>
+      <p>Don't have an account? <a href="user_signup.html">Sign up</a></p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha3/0.6.0/sha3.min.js"></script>
+    <script>
+      function validate() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Encrypt password using SHA-256
+        var hash = sha3_256(password);
+
+        // Add CSRF token to form data
+        var token = document.createElement("input");
+        token.setAttribute("type", "hidden");
+        token.setAttribute("name", "csrf_token");
+        token.setAttribute("value", generateToken());
+        document.getElementById("login_form").appendChild(token);
+
+        return true;
+      }
+
+      // Generate a random CSRF token
+      function generateToken() {
+        var chars =
+          "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        var token = "";
+        for (var i = 0; i < 32; i++) {
+          token += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return token;
+      }
+
+      // Redirect to homepage after successful login based on user role
+      function redirectToHomepage(role) {
+        if (role === "user") {
+          window.location.href = "user_homepage.html";
+        } else if (role === "admin") {
+          window.location.href = "admin_homepage.html";
+        }
+      }
+
+      // Dummy function to encrypt password using SHA-256
+      function sha256(password) {
+        return password; // Replace with actual encryption function
+      }
+
+      // Dummy function to authenticate user credentials
+      function authenticate(username, password) {
+        // Replace with actual authentication function
+        if (username === "user" && password === "password") {
+          return "user";
+        } else if (username === "admin" && password === "password") {
+          return "admin";
+        } else {
+          return null;
+        }
+      }
+
+      // Submit login form
+      function submitForm() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Authenticate user credentials
+        var role = authenticate(username, password);
+        if (role === null) {
+          alert("Invalid username or password");
+          return;
+        }
+
+        // Redirect to homepage based on user role
+        redirectToHomepage(role);
+      }
+    </script>
+  </body>
+</html>
