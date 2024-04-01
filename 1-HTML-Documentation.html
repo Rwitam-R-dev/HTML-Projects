@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Documentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+      /* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+/* Navigation */
+nav {
+    background: linear-gradient(45deg, #333, #555);
+    color: #fff;
+    padding: 10px; /* Adjust padding for better spacing */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px; /* Adjust sidebar width */
+    overflow-y: auto;
+    z-index: 1000; /* Ensure navigation is above other content */
+}
+
+nav h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ccc;
+    background-color: #333; /* Add background color on hover */
+}
+
+/* Main Content */
+main {
+    margin-left: 220px; /* Adjust margin to match sidebar width */
+}
+
+section {
+    padding: 20px;
+    background-color: #fff;
+    margin-right: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden; /* Add overflow property to hide content overflow */
+}
+
+section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre-big.png');
+    opacity: 0.05;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+section p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+pre {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table td, table th {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(45deg, #333, #555);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+footer:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre-big.png');
+    opacity: 0.05;
+}
+
+/* Adjusting Media Queries */
+@media (max-width: 768px) {
+    main {
+        margin-left: 0; /* Reset margin for smaller screens */
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Highlight Active Navigation Item */
+nav a.active {
+    font-weight: bold;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Additional Styling */
+.hscroll {
+    overflow-x: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    nav {
+        width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        width: 100%;
+        position: static;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+
+    main {
+        margin-left: 0;
+    }
+}
+    </style>
+</head>
+<body>
+  <nav id="sidebar">
+    <h2>HTML</h2>
+    <ul>
+      <li><a class="nav-item" href="#Introduction">Introduction</a></li>
+      <li><a class="nav-item" href="#html_editors">HTML Editors</a></li>
+      <li><a class="nav-item" href="#html_elements">HTML Elements</a></li>
+      <li><a class="nav-item" href="#html_attributes">HTML Attributes</a></li>
+      <li><a class="nav-item" href="#html_heading">HTML Heading</a></li>
+      <li><a class="nav-item" href="#html_paragraph">HTML Paragraph</a></li>
+      <li><a class="nav-item" href="#html_style">HTML Style</a></li>
+      <li><a class="nav-item" href="#html_formatting">HTML Formatting</a></li>
+      <li><a class="nav-item" href="#html_cheatsheet">HTML Cheatsheet</a></li>
+      <li><a class="nav-item" href="#css_cheatsheet">CSS Cheatsheet</a></li>
+      <li><a class="nav-item" href="#javascript_cheatsheet">JavaScript Cheatsheet</a></li>
+      <li><a class="nav-item" href="#reference">Reference</a></li>
+      <li><a class="nav-item" href="#more_info">More Info</a></li
+    </ul>
+  </nav>
+  <main id="documentation">
+    <section id="Introduction">
+      <h2>Introduction</h2>
+      <article>
+        <p>
+          HTML is an acronym for HyperText Markup Language, and it is the
+          standard language for creating web-pages. Every web page you surf on
+          your browser is built using HTML. The primary use of HTML to provide
+          a proper structure to the web-page so all the content or data of the
+          page could represent adequately. A stand-alone HTML can create only
+          static and skeleton looking black and white pages, but with the help
+          of CSS and JavaScript , we can create a more interactive and
+          intuitive web-page. When we try to visit a website or click on the
+          link, we basically request the server to show us the page, then the
+          server acts on our request and sends us an appropriate HTML document
+          as a response. Then this HTML document parsed by browse, and we able
+          to see the content.
+        </p>
+        <h3>HTML Document</h3>
+        <pre>
+&lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;head&gt;
+                &lt;title&gt;Page Title&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+
+                &lt;h1&gt;This is a Heading&lt;/h1&gt;
+                &lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+                &lt;/body&gt;
+                &lt;/html&gt;</pre>
+      </article>
+    </section>
+    <section id="html_editors">
+      <h2>HTML Editors</h2>
+      <article>
+        <p>
+          However, you can use notepad to create and edit HTML documents, but
+          we recommend to install an open-source editor. There are many free
+          to use text-editor software present on the internet, which provides
+          a better interactive User interface and some add-on functionality
+          which you miss on a notepad.
+        </p>
+        <p>Here is the list of top 4 HTML text editors you can pick:</p>
+
+        <ul>
+          <li>Sublime Text Editor</li>
+          <li>Notepad++</li>
+          <li>Visual Studio Code</li>
+          <li>Atom</li>
+        </ul>
+      </article>
+    </section>
+    <section id="html_elements">
+      <h2>HTML Elements</h2>
+      <article>
+        <p>
+          The HTML elements provide the semantic meaning to the web-page
+          content. We usually interchangeably use the term HTML elements and
+          tags, but technically both are different. An HTML tag is just a
+          character inside the angle bracket<>, whereas the HTML element is a
+            collection of starting tag, its attribute, content and end tag. For
+            example:
+        </p>
+        <pre>&lt;p class= "para"&gt; Hello World &lt;/p&gt;</pre>
+      </article>
+    </section>
+    <section id="html_attributes">
+      <h2>HTML Attributes</h2>
+      <article>
+        <p>
+          In HTML, the attributes are used to provide additional information
+          about the elements. For most of the HTML elements, attributes are
+          optional, but there are some elements where we have to deliver the
+          attributes. Attributes always specified within the opening tag of
+          the HTML element and they specified in a name and value pair.
+          <strong> Example </strong>
+        </p>
+        <pre>&lt;image src= "cat.jpg" alt ="cat image"&gt;</pre>
+        <p>
+          In this example src ="cat.jpg" and alt="cat image" are two
+          attributes where src and alt are attributes name and "cat.jpg" and
+          "cat image" are attributes values. Here alt attribute is optional,
+          but src is mandatory because src specify which image to show. There
+          should be at least one space gap between two attributes, and the
+          value of the attributes must have resided in the double inverted
+          comma. Some most important HTML
+        </p>
+      </article>
+    </section>
+    <section id="html_heading">
+      <h2>HTML Heading</h2>
+      <p>
+        To display the section heading, title or subtitle we can use the HTML
+        heading tags. In HTML 5 we have 6 heading tags start from &lt;h1&gt;
+        up to &lt;h6&gt;, where &lt;h1&gt; specify the largest heading and
+        &lt;h6&gt; represent the smallest or sub heading. If the content is
+        specified by heading tags, then it would be displayed large and bold
+        as compared to other text content present on the web-page.
+        <strong> Example </strong>
+      </p>
+      <pre>
+&lt;h1&gt;First Heading &lt;/h1&gt;
+            &lt;h2&gt;Second Heading &lt;/h2&gt;
+            &lt;h3&gt;Third Heading &lt;/h3&gt;
+            &lt;h4&gt;Forth Heading &lt;/h4&gt;
+            &lt;h5&gt;Fifth Heading &lt;/h5&gt;
+            &lt;h6&gt;Sixth Heading &lt;/h6&gt;</pre>
+    </section>
+    <section id="html_paragraph">
+      <h2>HTML Paragraph</h2>
+      <article>
+        <p>
+          In HTML paragraphs can be defined using &lt;p&gt; element. Paragraph
+          text always starts from a new line, the browser parsed the &lt;p&gt;
+          tag and automatically add some margin and white space after the end
+          &lt;/p&gt; tag.
+        </p>
+        <pre>
+&lt;p&gt; Hello! and Welcome to TechGeekBuzz &lt;/p&gt;
+                &lt;p&gt; Here you get to know all about the latest technology. &lt;/p&gt;</pre>
+      </article>
+    </section>
+    <section id="html_style">
+      <h2>HTML Style</h2>
+      <article>
+        <p>
+          Every browser has a specific engine that parses the HTML document and displays a default style of the page content.
+        </p>
+        <pre>&lt;body style="background-color:yellow;"&gt;
+
+                &lt;h1&gt;TechGeekBuzz&lt;/h1&gt;
+                &lt;p&gt;Welcome to TechGeekBuzz.&lt;/p&gt;
+                
+                &lt;/body&gt;</pre>
+      </article>
+    </section>
+    <section id="html_formatting">
+      <h2>HTML Formatting</h2>
+      <article>
+        <p>
+          In HTML, we have many special elements that can provide special meaning to text content.
+        </p>
+        <div class="hscroll">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <a href="https://www.techgeekbuzz.com/html-elements/">
+                    HTML Elements
+                  </a>
+                </td>
+                <td>
+                  Description
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  &lt;b&gt;
+                </td>
+                <td>
+                  Bold the text
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  &lt;strong&gt;
+                </td>
+                <td>
+                  An alternative for &lt;b&gt;, which tell that this text is essential.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  &lt;i&gt;
+                </td>
+                <td>
+                  Italic the text
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  &lt;em&gt;
+                </td>
+                <td>
+                  Similar to italic but used when we want to emphasize the text.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  &lt;mark&gt;
+                </td>
+                <td>
+                  It marks the text with a default "yellow" background colour
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  &lt;small&gt;
+                </td>
+                <td>
+                  Decrease the text size
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  &lt;del&gt;
+                </td>
+                <td>
+                  It prints a cross line over the text.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  &lt;ins&gt;
+                </td>
+                <td>
+                  Represents the inserted text by putting an underline.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  &lt;sub&gt;
+                </td>
+                <td>
+                  This element is used to display the subscript.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  &lt;sup&gt;
+                </td>
+                <td>
+                  It can make a text superscript.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+    <section id="html_cheatsheet">
+      <h2>HTML Cheatsheet</h2>
+      <article>
+        <!-- HTML Cheatsheet content -->
+        <article>
+    <h3>Common HTML Elements</h3>
+    <ul>
+      <li><code>&lt;div&gt;</code>: Defines a division or section in an HTML document.</li>
+      <li><code>&lt;p&gt;</code>: Defines a paragraph.</li>
+      <li><code>&lt;a&gt;</code>: Defines a hyperlink.</li>
+      <li><code>&lt;img&gt;</code>: Defines an image.</li>
+      <li><code>&lt;ul&gt;</code>: Defines an unordered list.</li>
+      <li><code>&lt;ol&gt;</code>: Defines an ordered list.</li>
+      <li><code>&lt;li&gt;</code>: Defines a list item.</li>
+      <li><code>&lt;header&gt;</code>: Defines a header for a document or a section.</li>
+      <li><code>&lt;footer&gt;</code>: Defines a footer for a document or a section.</li>
+      <li><code>&lt;nav&gt;</code>: Defines a set of navigation links.</li>
+      <li><code>&lt;article&gt;</code>: Defines an independent, self-contained content.</li>
+      <li><code>&lt;section&gt;</code>: Defines a section in a document.</li>
+      <li><code>&lt;aside&gt;</code>: Defines content aside from the content (like a sidebar).</li>
+      <li><code>&lt;figure&gt;</code>: Defines self-contained content, like illustrations or diagrams.</li>
+      <li><code>&lt;figcaption&gt;</code>: Defines a caption for a <code>&lt;figure&gt;</code> element.</li>
+    </ul>
+    <h3>HTML Attributes</h3>
+    <ul>
+      <li><code>src</code>: Specifies the URL of the resource to be used (e.g., in an image or hyperlink).</li>
+      <li><code>href</code>: Specifies the URL of the linked document.</li>
+      <li><code>class</code>: Specifies one or more class names for an element.</li>
+      <li><code>id</code>: Specifies a unique id for an element.</li>
+      <li><code>alt</code>: Specifies an alternative text for an image.</li>
+      <li><code>style</code>: Specifies inline CSS styles for an element.</li>
+      <li><code>placeholder</code>: Specifies a short hint that describes the expected value of an input field.</li>
+      <li><code>target</code>: Specifies where to open the linked document.</li>
+      <li><code>rel</code>: Specifies the relationship between the current document and the linked document.</li>
+      <li><code>title</code>: Specifies extra information about an element.</li>
+    </ul>
+    <h3>Form Elements</h3>
+    <ul>
+      <li><code>&lt;input&gt;</code>: Defines an input control.</li>
+      <li><code>&lt;textarea&gt;</code>: Defines a multiline input control (text area).</li>
+      <li><code>&lt;select&gt;</code>: Defines a dropdown list.</li>
+      <li><code>&lt;button&gt;</code>: Defines a clickable button.</li>
+      <li><code>&lt;form&gt;</code>: Defines an HTML form for user input.</li>
+      <li><code>&lt;label&gt;</code>: Defines a label for an input element.</li>
+    </ul>
+    <h3>Meta Tags</h3>
+    <ul>
+      <li><code>&lt;meta charset="UTF-8"&gt;</code>: Defines the character encoding for the document.</li>
+      <li><code>&lt;meta name="description" content="..."/&gt;</code>: Provides a description of the document's content.</li>
+      <li><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>: Sets the viewport width and initial scale for mobile devices.</li>
+    </ul>
+  </article>
+  
+      </article>
+    </section>
+    <section id="css_cheatsheet">
+      <h2>CSS Cheatsheet</h2>
+      <article>
+        <!-- CSS Cheatsheet content -->
+        <article>
+    <h3>Common CSS Properties</h3>
+    <ul>
+      <li><code>color</code>: Sets the color of text.</li>
+      <li><code>font-size</code>: Sets the size of the font.</li>
+      <li><code>margin</code>: Sets the margin of an element.</li>
+      <li><code>padding</code>: Sets the padding of an element.</li>
+      <li><code>background-color</code>: Sets the background color of an element.</li>
+      <li><code>border</code>: Sets the border of an element.</li>
+      <li><code>display</code>: Sets how an element is displayed.</li>
+    </ul>
+    <h3>Selector Types</h3>
+    <ul>
+      <li><code>#id</code>: Selects an element with a specific id.</li>
+      <li><code>.class</code>: Selects all elements with a specific class.</li>
+      <li><code>element</code>: Selects all elements of a specific type.</li>
+      <li><code>element.class</code>: Selects elements with a specific class within a specific element.</li>
+      <li><code>element, element</code>: Selects multiple elements.</li>
+    </ul>
+    <h3>Box Model</h3>
+    <ul>
+      <li><code>margin</code>: Sets the margin area around an element.</li>
+      <li><code>padding</code>: Sets the padding area around an element's content.</li>
+      <li><code>border</code>: Sets the border around an element.</li>
+      <li><code>width</code>: Sets the width of an element's content area.</li>
+      <li><code>height</code>: Sets the height of an element's content area.</li>
+      <li><code>display</code>: Specifies the display behavior of an element.</li>
+    </ul>
+    <h3>Positioning</h3>
+    <ul>
+      <li><code>position</code>: Sets the positioning method of an element.</li>
+      <li><code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>: Sets the position of an element.</li>
+      <li><code>float</code>: Specifies whether an element should float to the left, right, or not at all.</li>
+      <li><code>clear</code>: Specifies what elements can float beside the cleared element and on which sides.</li>
+      <li><code>z-index</code>: Specifies the stack order of an element.</li>
+    </ul>
+    <h3>Text Properties</h3>
+    <ul>
+      <li><code>color</code>: Sets the color of text.</li>
+      <li><code>font-family</code>: Specifies the font family for text.</li>
+      <li><code>font-size</code>: Sets the font size of text.</li>
+      <li><code>font-weight</code>: Sets the weight of text.</li>
+      <li><code>text-align</code>: Specifies the alignment of text.</li>
+      <li><code>text-decoration</code>: Specifies the decoration added to text.</li>
+    </ul>
+    <h3>Flexbox Properties</h3>
+    <ul>
+      <li><code>display: flex</code>: Specifies a flex container.</li>
+      <li><code>flex-direction</code>: Specifies the direction of the flex container.</li>
+      <li><code>justify-content</code>: Aligns flex items along the main axis of the flex container.</li>
+      <li><code>align-items</code>: Aligns flex items along the cross axis of the flex container.</li>
+      <li><code>flex</code>: Specifies how a flex item grows or shrinks to fit the available space.</li>
+    </ul>
+  </article>
+      </article>
+    </section>
+    <section id="javascript_cheatsheet">
+      <h2>JavaScript Cheatsheet</h2>
+      <article>
+        <!-- JavaScript Cheatsheet content -->
+        <h3>Basic Syntax</h3>
+    <ul>
+      <li><code>let</code>: Declares a block-scoped local variable.</li>
+      <li><code>const</code>: Declares a block-scoped read-only named constant.</li>
+      <li><code>function</code>: Declares a function.</li>
+      <li><code>if...else</code>: Executes a block of code if a specified condition is true.</li>
+      <li><code>for</code>: Loops through a block of code a number of times.</li>
+      <li><code>while</code>: Loops through a block of code while a specified condition is true.</li>
+      <li><code>document.querySelector()</code>: Returns the first element that matches a specified CSS selector(s) in the document.</li>
+    </ul>
+    <h3>DOM Manipulation</h3>
+    <ul>
+      <li><code>document.getElementById()</code>: Returns the element that has the specified ID.</li>
+      <li><code>document.createElement()</code>: Creates a new HTML element.</li>
+      <li><code>element.innerHTML</code>: Sets or returns the HTML content (innerHTML) of an element.</li>
+      <li><code>element.style.property</code>: Sets or returns the value of a specific style property for an element.</li>
+      <li><code>addEventListener()</code>: Attaches an event handler to the specified element.</li>
+    </ul>
+    <h3>Functions</h3>
+    <ul>
+      <li><code>setTimeout()</code>: Executes a function after waiting a specified number of milliseconds.</li>
+      <li><code>setInterval()</code>: Executes a function repeatedly, with a fixed time delay between each call.</li>
+      <li><code>parseInt()</code>: Parses a string and returns an integer.</li>
+      <li><code>parseFloat()</code>: Parses a string and returns a floating-point number.</li>
+      <li><code>isNaN()</code>: Determines whether a value is NaN (Not-a-Number).</li>
+      <li><code>toFixed()</code>: Formats a number using fixed-point notation.</li>
+    </ul>
+    <h3>Arrays</h3>
+    <ul>
+      <li><code>push()</code>: Adds one or more elements to the end of an array and returns the new length.</li>
+      <li><code>pop()</code>: Removes the last element from an array and returns that element.</li>
+      <li><code>shift()</code>: Removes the first element from an array and returns that element.</li>
+      <li><code>unshift()</code>: Adds one or more elements to the beginning of an array and returns the new length.</li>
+      <li><code>splice()</code>: Adds or removes elements from an array.</li>
+    </ul>
+      </article>
+    </section>
+
+    <section id="reference">
+      <h2>Reference</h2>
+      <article>
+          <ul>
+              <li>
+                  For more references and some hands-on projects visit -  
+                  <a href="https://github.com/Rwitam-R-dev"><i class="fab fa-github"></i></a>
+              </li>
+          </ul>
+      </article>
+  </section>
+  
+  <section id="more_info">
+      <h2>More Information</h2>
+      <article>
+          <!-- More Information content -->
+          <p>
+              Here are some additional resources where you can learn more about <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>:
+          </p>
+          <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">MDN Web Docs: HTML</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">MDN Web Docs: CSS</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN Web Docs: JavaScript</a></li>
+          </ul>
+      </article>
+  </section>
+  
+    
+  </main>
+  <script>
+  // Smooth scrolling to section when a navigation item is clicked
+  document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  // Highlighting active navigation item
+  window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    let current = '';
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= sectionTop - sectionHeight / 3) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.classList.remove('active');
+      if (anchor.getAttribute('href').substring(1) === current) {
+        anchor.classList.add('active');
+      }
+    });
+  });
+</script>
+<!-- Footer -->
+<footer>
+    <p> &copy; Developed by Rwitam - 2024</p>
+</footer>
+
+</body>
+</html>
