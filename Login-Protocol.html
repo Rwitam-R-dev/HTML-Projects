@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Get Started</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        /* Common styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #7d2ae8;
+            padding: 30px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 850px;
+            width: 100%;
+            background: #fff;
+            padding: 40px 30px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            perspective: 2700px;
+            display: none;
+        }
+
+        /* Form styles */
+        .forms {
+            width: 100%;
+            text-align: center;
+        }
+
+        .form-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .input-boxes {
+            width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
+        }
+
+        .input-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 50px;
+            margin: 10px 0;
+        }
+
+        .input-box i {
+            position: absolute;
+            color: #7d2ae8;
+            font-size: 17px;
+        }
+
+        .input-box input,
+        .input-box select {
+            height: 100%;
+            width: 100%;
+            outline: none;
+            border: none;
+            padding: 0px 30px;
+            font-size: 16px;
+            font-weight: 500;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            background-color: #fff;
+        }
+
+        .input-box input:hover,
+        .input-box input:valid,
+        .input-box select:hover {
+            margin-top: 10px;
+            border-color: #7d2ae8;
+        }
+
+        .button {
+            margin-top: 40px;
+        }
+
+        /* Original button styles */
+        .button input {
+            color: #fff;
+            background: #7d2ae8;
+            border-radius: 6px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .button input:hover {
+            background: #5b13b9;
+        }
+
+        .text {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            margin-top: 15px;
+        }
+
+        .text a {
+            color: #7d2ae8;
+            text-decoration: none;
+        }
+
+        .text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Enhanced button styles */
+        .styled-button {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            border-radius: 6px;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .styled-button-primary {
+            color: #fff;
+            background-color: #7d2ae8;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .styled-button-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .styled-button-secondary {
+            color: #7d2ae8;
+            background-color: #fff;
+            border: 2px solid #7d2ae8;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .styled-button-secondary:hover {
+            color: #fff;
+            background-color: #7d2ae8;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animation styles */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .slide-in-bottom {
+            animation: slideInBottom 0.5s ease-in-out;
+        }
+
+        .shake {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInBottom {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shake {
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25%,
+            75% {
+                transform: translateX(-5px);
+            }
+
+            50% {
+                transform: translateX(5px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="welcome-container" style="text-align: center; color: #fff; margin-bottom: 30px;">
+        <h1 style="font-size: 36px; font-weight: 700;">Welcome to Get Started Page</h1>
+        <p>
+            Welcome to our platform! Sign up or log in to access personalized features and content.
+        </p>
+        <button class="styled-button styled-button-primary" onclick="showForm('signup-form')">Sign Up</button>
+        <button class="styled-button styled-button-secondary" onclick="showForm('login-form')">Log In</button>
+    </div>
+
+
+    <div class="container" id="get-started-container">
+        <div class="forms fade-in">
+            <div class="form-content" id="signup-form">
+                <div class="title">Sign Up</div>
+                <form id="signupForm" onsubmit="submitSignupForm()">
+                    <div class="input-boxes">
+                        <div class="input-box">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="signupName" placeholder="Enter your name" required>
+                        </div>
+                        <div class="input-box">
+                            <i class="fas fa-envelope"></i>
+                            <input type="text" id="signupEmail" placeholder="Enter your email" required>
+                        </div>
+                        <div class="input-box">
+                            <i class="fa fa-graduation-cap"></i>
+                            <select id="signupStream" required>
+                                <option value="" disabled selected>Select your stream</option>
+                                <option value="CSE">CSE</option>
+                                <option value="IT">IT</option>
+                                <option value="ECE">ECE</option>
+                            </select>
+                        </div>
+                        <div class="input-box">
+                            <i class="fa fa-id-card"></i>
+                            <input type="text" id="signupRoll" placeholder="Enter your College Roll" required>
+                        </div>
+                        <div class="input-box">
+                            <i class="fas fa-id-card"></i>
+                            <input type="text" id="signupUniv" placeholder="Enter your University Roll" required>
+                        </div>
+                        <div class="input-box">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="signupPassword" placeholder="Enter your password" required>
+                        </div>
+                        <div class="button input-box">
+                            <input type="submit" value="Sign Up">
+                        </div>
+                        <div class="text">Already have an account? <a href="#" onclick="showLoginForm()">Login now</a></div>
+                    </div>
+                </form>
+            </div>
+            <div class="form-content" id="login-form" style="display:none;">
+                <div class="title">Login</div>
+                <form id="loginForm" onsubmit="submitLoginForm()">
+                    <div class="input-boxes">
+                        <div class="input-box">
+                            <i class="fas fa-id-card"></i>
+                            <input type="text" id="loginRoll" placeholder="Enter your College Roll" required>
+                        </div>
+                        <div class="input-box">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                        </div>
+                        <div class="button input-box">
+                            <input type="submit" value="Login">
+                        </div>
+                        <div class="text">Don't have an account? <a href="#" onclick="showSignupForm()">Sign Up now</a></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Show the welcome container immediately
+                document.getElementById('welcome-container').style.display = 'block';
+    
+                // Wait for 3 seconds (adjust as needed) and then show the forms container
+                setTimeout(function () {
+                    document.getElementById('welcome-container').style.display = 'none';
+                    showFormContainer();
+                }, 3000);
+            });
+    
+            // Function to handle form visibility
+            function showFormContainer() {
+                const getStartedContainer = document.getElementById('get-started-container');
+                getStartedContainer.style.display = 'block';
+                getStartedContainer.classList.add('fade-in'); // Add fade-in class for animation
+            }
+    
+            // Function to handle form submission for signup
+            function submitSignupForm() {
+                alert("Sign Up form submitted");
+                // TODO: Implement form validation and AJAX request for signup
+            }
+    
+            // Function to handle form submission for login
+            function submitLoginForm() {
+                alert("Login form submitted");
+                // TODO: Implement form validation and AJAX request for login
+            }
+    
+            // Function to handle form visibility
+            function showForm(formId) {
+                const forms = document.querySelectorAll('.form-content');
+                forms.forEach(form => {
+                    form.style.display = form.id === formId ? 'block' : 'none';
+                });
+            }
+    
+            // Function to show login form
+            function showLoginForm() {
+                showForm('login-form');
+            }
+    
+            // Function to show signup form
+            function showSignupForm() {
+                showForm('signup-form');
+            }
+    
+            // Function to validate signup form
+            function validateSignupForm() {
+                const password = document.getElementById('signupPassword').value;
+                const confirmPassword = document.getElementById('signupConfirmPassword').value;
+                const errorElement = document.getElementById('signupPasswordError');
+    
+                if (password !== confirmPassword) {
+                    errorElement.innerHTML = 'Passwords do not match';
+                    return false;
+                } else {
+                    errorElement.innerHTML = '';
+                    return true;
+                }
+            }
+        </script>
+</body>
+</html>
